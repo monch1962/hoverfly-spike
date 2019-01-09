@@ -1,5 +1,5 @@
 # Hoverfly spike
-These are some experiments with how to easily generate stubs to use with Hoverfly (https://github.com/SpectoLabs/hoverfly). The goal is to create stubs for *yet-to-be-developed* backend systems as quickly as possible, then tweak them from
+These are some experiments with how to easily generate stubs to use with Hoverfly (https://github.com/SpectoLabs/hoverfly). The goal is to create stubs for *yet-to-be-developed* backend systems as quickly as possible, then tweak them to become useful
 
 `./new-stub.sh GET https://localhost:8000/blah?a=b 200`
 should return a useful Hoverfly stub template to get started with.
