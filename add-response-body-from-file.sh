@@ -12,7 +12,7 @@ FILE_CONTENT=$(< $BODY_FILE)
 
 if jq -e . > /dev/null 2>&1 <<< $FILE_CONTENT; then
     echo $(cat) | 
-        jq --slurpfile BODY_FROM_FILE $BODY_FILE '.data.pairs[0].response.body = $BODY_FROM_FILE[0]'
+        jq --slurpfile BODY_FROM_FILE $BODY_FILE '.data.pairs[0].response.body = ($BODY_FROM_FILE[0]|tostring)'
 else
     # Assume the body file is XML
     echo $(cat) |
