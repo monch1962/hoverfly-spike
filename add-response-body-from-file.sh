@@ -16,5 +16,5 @@ if jq -e . > /dev/null 2>&1 <<< $FILE_CONTENT; then
 else
     # Assume the body file is XML
     echo $(cat) |
-        jq --arg xml "$(<"$BODY_FILE")" '.data.pairs[0].response.body = ($xml | @html)' 
+        jq --arg xml "$(<"$BODY_FILE")" '.data.pairs[0].response.body = ($xml)' 
 fi
