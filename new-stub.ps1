@@ -51,7 +51,7 @@ $stub = [ordered]@{
                     query = @{}
                 };
                 response = [ordered]@{
-                    status = $status;
+                    status = [int]$status;
                     body = "";
                     encodedBody = $false;
                     headers = @{};
