@@ -52,7 +52,7 @@ $stub = [ordered]@{
                 };
                 response = [ordered]@{
                     status = [int]$status;
-                    body = "";
+                    body = "nothing";
                     encodedBody = $false;
                     headers = @{};
                     templated = $false;

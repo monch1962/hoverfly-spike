@@ -34,7 +34,7 @@ echo "{}" |
     jq '.data.pairs[0].request.body[0].matcher = "exact"' |
     jq '.data.pairs[0].request.body[0].value = ""' |
     jq '.data.pairs[0].request.query = {}' |
-    jq '.data.pairs[0].response.body = "{}"' |
+    jq '.data.pairs[0].response.body = "nothing"' |
     jq '.data.pairs[0].response.encodedBody = false' |
     jq '.data.pairs[0].response.headers = {}' |
     jq '.data.pairs[0].response.templated = false' |
