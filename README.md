@@ -26,6 +26,9 @@ should add a response body from a JSON file to that template.
 `pwsh new-stub.ps1 GET https://localhost:8000/blah?a=b 200 | pwsh add-response-body-from-file.ps1 sample-body.xml`
 should add an escaped XML response body from a file to that template.
 
+`pwsh new-stub.ps1 GET https://localhost:8000/blah?a=b 200 | pwsh add-response-body-from-file.ps1 sample-body.json | pwsh append-stub.ps1 | pwsh add-response-body-from-file.ps1 sample-body.xml`
+should add a response body from a JSON file to that template, then create another request/response stub pair, then add an escaped XML response body from a different file to that 2nd stub pair.
+
 
 ### bash + jq + sed
 `./new-stub.sh GET https://localhost:8000/blah?a=b 200`
