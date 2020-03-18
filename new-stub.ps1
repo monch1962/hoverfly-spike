@@ -48,6 +48,7 @@ $stub = [ordered]@{
                             value = $body;
                         };
                     )
+                    headers = @{};
                     query = @{}
                 };
                 response = [ordered]@{

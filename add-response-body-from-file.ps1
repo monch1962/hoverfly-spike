@@ -5,5 +5,5 @@ if ($args.Count -ne 1) {
 }
 $json = @($Input) | ConvertFrom-Json
 $new_body = [IO.File]::ReadAllText($args[0])
-$json.data.pairs[0].response.body = $new_body
+$json.data.pairs[-1].response.body = $new_body
 Write-Output $json | ConvertTo-Json -Depth 10
