@@ -3,7 +3,6 @@ if ($args.Count -ne 3) {
     exit 1
 }
 $json = @($Input) | ConvertFrom-Json
-#$new_body = [IO.File]::ReadAllText($args[0])
 $method = $args[0]
 $url = [uri]$args[1]
 $scheme = $url.Scheme
@@ -12,7 +11,6 @@ $path = $url.LocalPath
 $body = ""
 $status = $args[2]
 
-#$json.data.pairs[-1].request.body = $new_body
 $new_stub = [ordered]@{
     request = [ordered]@{
         path = @(
