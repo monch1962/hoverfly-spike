@@ -1,5 +1,5 @@
 if ($args.Count -ne 1) {
-    Write-Output "Expecting to be invoked with 'pwsh new-stub.ps1 HTTP_VERB URL HTTP_RESPONSE_CODE'"
+    Write-Output "Expecting to be invoked with 'pwsh add-response-from-file.ps1 RESPONSE_BODY_JSON'"
     Write-Output "e.g. 'pwsh add-response-body-from-file.ps1 sample-body.json'"
     exit 1
 }

@@ -49,7 +49,14 @@ $stub = [ordered]@{
                         };
                     )
                     headers = @{};
-                    query = @{}
+                    query = @{
+                        query = @(
+                            @{
+                                matcher = "exact";
+                                value = "";
+                            }
+                        )
+                    }
                 };
                 response = [ordered]@{
                     status = [int]$status;
