@@ -5,5 +5,11 @@ if ($args.Count -ne 1) {
 }
 $json = @($Input) | ConvertFrom-Json
 $new_body = [IO.File]::ReadAllText($args[0])
+try {
+    $new_body = ConvertFrom-Json $new_body -ErrorAction Stop;
+    #$bodyIsJson = $true;
+} catch {
+    #$bodyIsJson = $false;
+}
 $json.data.pairs[-1].response.body = $new_body
 Write-Output $json | ConvertTo-Json -Depth 10
