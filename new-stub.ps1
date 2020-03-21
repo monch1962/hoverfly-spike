@@ -12,6 +12,11 @@ $destination = $url.Authority
 $path = $url.LocalPath
 $body = ""
 $status = $args[2]
+if ($path.contains("*") || $path.contains("?")) {
+    $path_matcher = "glob"
+} else {
+    $path_matcher = "exact"
+}
 
 $stub = [ordered]@{
     data = @{
@@ -20,7 +25,7 @@ $stub = [ordered]@{
                 request = [ordered]@{
                     path = @(
                         @{
-                            matcher = "exact";
+                            matcher = $path_matcher;
                             value = $path;
                         };
                     )

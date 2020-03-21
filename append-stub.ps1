@@ -8,6 +8,11 @@ $url = [uri]$args[1]
 $scheme = $url.Scheme
 $destination = $url.Authority
 $path = $url.LocalPath
+if ($path.contains("*") || $path.contains("?")) {
+    $path_matcher = "glob"
+} else {
+    $path_matcher = "exact"
+}
 $body = ""
 $status = $args[2]
 
@@ -15,7 +20,7 @@ $new_stub = [ordered]@{
     request = [ordered]@{
         path = @(
             @{
-                matcher = "exact";
+                matcher = $path_matcher;
                 value = $path;
             };
         )
